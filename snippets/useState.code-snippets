@@ -1,0 +1,19 @@
+{
+	"useState": {
+		"prefix": "ust",
+		"body": [
+		  "const [$1, set${1/(.*)/${1:/capitalize}/}] = useState($2);",
+		  "$3"
+		],
+		"description": "creates use state"
+	  },
+	  "React useEffect": {
+		"prefix": "uef",
+		"body": [
+		  "useEffect(() => {",
+		  "  $1",
+		  "}, [$2]);"
+		],
+		"description": "React useEffect"
+	  }
+}

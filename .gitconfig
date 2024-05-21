@@ -1,0 +1,9 @@
+[user]
+	name = FredrikMWold
+	email = fredrik.wold@bouvet.no
+[core]
+	editor = code --wait
+[pull]
+	rebase = true
+[rerere]
+	enabled = true

@@ -1,0 +1,63 @@
+{
+  "editor.fontFamily": "'Fira Code'",
+  "editor.quickSuggestions": {
+    "strings": "on"
+  },
+  "files.autoSave": "afterDelay",
+  "editor.fontSize": 13,
+  "explorer.": 15,
+  "editor.formatOnSave": true,
+  "eslint.format.enable": true,
+  "terminal.integrated.fontFamily": "MesloLGS NF",
+  "workbench.tree.indent": 16,
+  "editor.fontLigatures": true,
+  "[typescriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": "explicit"
+  },
+  "git.autofetch": true,
+  "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "javascript.updateImportsOnFileMove.enabled": "always",
+  "githubPullRequests.fileListLayout": "flat",
+  "github.copilot.enable": {
+    "*": true,
+    "plaintext": false,
+    "markdown": true,
+    "scminput": false
+  },
+  "githubPullRequests.pullBranch": "never",
+  "terminal.integrated.env.linux": {},
+  "typescript.updateImportsOnFileMove.enabled": "always",
+  "redhat.telemetry.enabled": false,
+  "console-ninja.featureSet": "Community",
+  "files.associations": {
+    "*.css": "tailwindcss"
+  },
+  "tailwind-fold.autoFold": false,
+  "terminal.integrated.defaultProfile.linux": "zsh",
+  "workbench.colorTheme": "Catppuccin Mocha",
+  "workbench.colorCustomizations": {
+    "[Catppuccin Mocha]": {
+      "editorIndentGuide.activeBackground1": "#b4befe"
+    }
+  },
+  "window.zoomLevel": 1,
+  "editor.semanticHighlighting.enabled": true,
+  "terminal.integrated.minimumContrastRatio": 1,
+  "window.titleBarStyle": "custom",
+  "workbench.iconTheme": "catppuccin-mocha",
+  "diffEditor.ignoreTrimWhitespace": false,
+  "editor.stickyScroll.enabled": true,
+  "remote.SSH.remotePlatform": {
+    "sandbox.4kcjfh.csb": "linux"
+  },
+  "codesandbox.currentWorkspace": "1a53c741-67c6-47ec-be34-f76e01aa54cd",
+  "git.openRepositoryInParentFolders": "never",
+  "files.exclude": {
+    "**/.git": false
+  }
+}
