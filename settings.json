@@ -59,5 +59,6 @@
   "git.openRepositoryInParentFolders": "never",
   "files.exclude": {
     "**/.git": false
-  }
+  },
+  "git.confirmSync": false
 }
