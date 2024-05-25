@@ -1,6 +1,5 @@
 - hosts: localhost
   connection: local
-  become: yes
   become_user: fredrik
 
   tasks:
@@ -8,14 +7,22 @@
       git:
         repo: https://github.com/FredrikMWold/.dotfiles.git
         dest: ~/.dotfiles
-
+    - name: add vscode repository
+      become: yes
+      apt_repository:
+        repo: deb [arch=amd64] https://packages.microsoft.com/repos/vscode stable main
+    - name: add flathub repository
+      flatpak_remote:
+        name: flathub
+        flatpakrepo_url: https://dl.flathub.org/repo/flathub.flatpakrepo
+    - name: install stow
+      apt:
+        name: stow
+        state: latest
     - name: install htop
       apt:
         name: htop
         state: latest
-    - name: add vscode repository
-      apt_repository:
-        repo: deb [arch=amd64] https://packages.microsoft.com/repos/vscode stable main
     - name: install vscode
       apt:
         name: code
@@ -28,27 +35,10 @@
       apt:
         name: flameshot
         state: latest
-    - name: install stow
-      apt:
-        name: stow
-        state: latest
-    - name: debug
-      shell: echo $HOME
     - name: install zsh
       apt:
         name: zsh
         state: latest
-    - name: get oh-my-zsh status
-      stat:
-        path: ~/.oh-my-zsh
-      register: oh_my_zsh_status
-    - name: install oh-my-zsh
-      shell: sh -c "$(wget -O- https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
-      when: not oh_my_zsh_status.stat.exists
-    - name: add flathub repository
-      flatpak_remote:
-        name: flathub
-        flatpakrepo_url: https://dl.flathub.org/repo/flathub.flatpakrepo
     - name: install teams
       flatpak:
         name: com.github.IsmaelMartinez.teams_for_linux
@@ -57,5 +47,16 @@
       flatpak:
         name: com.slack.Slack
         state: present
+    - name: check if oh-my-zsh is installed
+      stat:
+        path: ~/.oh-my-zsh
+      register: oh_my_zsh
+    - name: install oh-my-zsh
+      shell: sh -c "$(wget -O- https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --keep-zshrc
+      when: oh_my_zsh.stat.exists == False
+    - name: remove old .zshrc
+      file:
+        path: ~/.zshrc
+        state: absent
     - name: symlink dotfiles with stow
       shell: cd ~/.dotfiles && stow config
