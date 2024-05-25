@@ -18,3 +18,11 @@
       apt:
         name: google-chrome-stable
         state: latest
+    - name: install flameshot
+      apt:
+        name: flameshot
+        state: latest
+    - name: add flathub repository
+      flatpak_remote:
+        name: flathub
+        flatpakrepo_url: https://dl.flathub.org/repo/flathub.flatpakrepo
