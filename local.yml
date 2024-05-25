@@ -6,6 +6,7 @@
       git:
         repo: https://github.com/FredrikMWold/.dotfiles.git
         dest: ~/.dotfiles
+      become_user: fredrik
     - name: add vscode repository
       apt_repository:
         repo: deb [arch=amd64] https://packages.microsoft.com/repos/vscode stable main
@@ -68,4 +69,10 @@
       become_user: fredrik
     - name: clear font cache
       shell: fc-cache -f -v
+      become_user: fredrik
+    - name: link dotfile script to bin
+      file:
+        src: ~/.dotfiles/bin/dotfiles
+        dest: /usr/bin/dotfiles
+        state: link
       become_user: fredrik
