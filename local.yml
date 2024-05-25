@@ -51,3 +51,6 @@
       flatpak:
         name: com.slack.Slack
         state: present
+    - name: symlink dotfiles with stow
+      become_user: fredrik
+      command: stow ./config
