@@ -30,3 +30,7 @@
       flatpak:
         name: com.github.IsmaelMartinez.teams_for_linux
         state: present
+    - name: install slack
+      flatpak:
+        name: com.slack.Slack
+        state: present
