@@ -22,6 +22,17 @@
       apt:
         name: flameshot
         state: latest
+    - name: install stow
+      apt:
+        name: stow
+        state: latest
+    - name: install zsh
+      apt:
+        name: zsh
+        state: latest
+    - name: install oh-my-zsh
+      become_user: fredrik
+      command: sh -c "$(wget -O- https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
     - name: add flathub repository
       flatpak_remote:
         name: flathub
