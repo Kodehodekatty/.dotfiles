@@ -48,7 +48,7 @@
     - name: install osrs
       flatpak:
         name: com.adamcake.Bolt
-        state: lastest
+        state: present
     - name: check if oh-my-zsh is installed
       stat:
         path: ~/.oh-my-zsh
