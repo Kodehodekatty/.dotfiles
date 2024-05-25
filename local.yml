@@ -73,6 +73,6 @@
     - name: link dotfile script to bin
       file:
         src: ~/.dotfiles/bin/dotfiles
-        dest: /usr/bin/dotfiles
+        dest: ~/bin/dotfiles
         state: link
       become_user: fredrik
