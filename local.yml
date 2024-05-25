@@ -26,3 +26,7 @@
       flatpak_remote:
         name: flathub
         flatpakrepo_url: https://dl.flathub.org/repo/flathub.flatpakrepo
+    - name: install teams
+      flatpak:
+        name: com.github.IsmaelMartinez.teams_for_linux
+        state: present
