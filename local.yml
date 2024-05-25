@@ -1,8 +1,14 @@
 - hosts: localhost
   connection: local
   become: yes
+  become_user: fredrik
 
   tasks:
+    - name: pull dotfile repo
+      git:
+        repo: https://github.com/FredrikMWold/.dotfiles.git
+        dest: ~/.dotfiles
+
     - name: install htop
       apt:
         name: htop
@@ -26,18 +32,18 @@
       apt:
         name: stow
         state: latest
+    - name: debug
+      shell: echo $HOME
     - name: install zsh
       apt:
         name: zsh
         state: latest
     - name: get oh-my-zsh status
-      become_user: fredrik
       stat:
         path: ~/.oh-my-zsh
       register: oh_my_zsh_status
     - name: install oh-my-zsh
-      become_user: fredrik
-      shell: sh -c "$(wget -O- https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+      shell: sh -c "$(wget -O- https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
       when: not oh_my_zsh_status.stat.exists
     - name: add flathub repository
       flatpak_remote:
@@ -52,5 +58,4 @@
         name: com.slack.Slack
         state: present
     - name: symlink dotfiles with stow
-      become_user: fredrik
-      shell: stow config
+      shell: cd ~/.dotfiles && stow config
