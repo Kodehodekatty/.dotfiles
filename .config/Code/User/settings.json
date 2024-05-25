@@ -50,7 +50,6 @@
   "terminal.integrated.minimumContrastRatio": 1,
   "window.titleBarStyle": "custom",
   "workbench.iconTheme": "catppuccin-mocha",
-  "diffEditor.ignoreTrimWhitespace": false,
   "editor.stickyScroll.enabled": true,
   "remote.SSH.remotePlatform": {
     "sandbox.4kcjfh.csb": "linux"
@@ -60,5 +59,6 @@
   "files.exclude": {
     "**/.git": false
   },
-  "git.confirmSync": false
+  "git.confirmSync": false,
+  "github.copilot.editor.enableAutoCompletions": true
 }
