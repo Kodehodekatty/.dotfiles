@@ -1,0 +1,12 @@
+#!/bin/bash
+
+if ! [ -x "$(command -v ansible)" ]; then
+  sudo apt install ansible -y
+fi
+
+
+if [ -x "$(command -v ansible)" ]; then
+  sudo ansible-pull -U https://github.com/FredrikMWold/.dotfiles.git
+else
+  echo "Ansible is not installed. Please install it first."
+fi
