@@ -7,3 +7,10 @@
       apt:
         name: htop
         state: latest
+    - name: add vscode repository
+      apt_repository:
+        repo: deb [arch=amd64] https://packages.microsoft.com/repos/vscode stable main
+    - name: install vscode
+      apt:
+        name: code
+        state: latest
