@@ -30,9 +30,15 @@
       apt:
         name: zsh
         state: latest
+    - name: get oh-my-zsh status
+      become_user: fredrik
+      stat:
+        path: ~/.oh-my-zsh
+      register: oh_my_zsh_status
     - name: install oh-my-zsh
       become_user: fredrik
-      command: sh -c "$(wget -O- https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+      shell: sh -c "$(wget -O- https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+      when: not oh_my_zsh_status.stat.exists
     - name: add flathub repository
       flatpak_remote:
         name: flathub
