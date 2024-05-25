@@ -1,14 +1,12 @@
 - hosts: localhost
   connection: local
-  become_user: fredrik
-
+  become: true
   tasks:
     - name: pull dotfile repo
       git:
         repo: https://github.com/FredrikMWold/.dotfiles.git
         dest: ~/.dotfiles
     - name: add vscode repository
-      become: yes
       apt_repository:
         repo: deb [arch=amd64] https://packages.microsoft.com/repos/vscode stable main
     - name: add flathub repository
@@ -51,12 +49,19 @@
       stat:
         path: ~/.oh-my-zsh
       register: oh_my_zsh
+      become_user: fredrik
     - name: install oh-my-zsh
       shell: sh -c "$(wget -O- https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --keep-zshrc
-      when: oh_my_zsh.stat.exists == False
+      when: not oh_my_zsh.stat.exists
+      become_user: fredrik
     - name: remove old .zshrc
       file:
         path: ~/.zshrc
         state: absent
+      become_user: fredrik
     - name: symlink dotfiles with stow
       shell: cd ~/.dotfiles && stow config
+      become_user: fredrik
+    - name: clear font cache
+      shell: fc-cache -f -v
+      become_user: fredrik
