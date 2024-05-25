@@ -45,6 +45,10 @@
       flatpak:
         name: com.slack.Slack
         state: present
+    - name: install osrs
+      flatpak:
+        name: com.adamcake.Bolt
+        state: lastest
     - name: check if oh-my-zsh is installed
       stat:
         path: ~/.oh-my-zsh
