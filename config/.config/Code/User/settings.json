@@ -2,9 +2,11 @@
   "workbench.iconTheme": "material-icon-theme",
   "javascript.updateImportsOnFileMove.enabled": "always",
   "editor.formatOnSave": true,
+  "editor.fontLigatures": true,
+  "editor.fontFamily": "'Fira Code'",
+  "terminal.integrated.fontFamily": "MesloLGS NF",
   "prettier.configPath": ".prettierrc",
-  
-"editor.codeActionsOnSave": {
+  "editor.codeActionsOnSave": {
   "source.organizeImports": "explicit"
 },
   "javascript.format.semicolons": "insert",
