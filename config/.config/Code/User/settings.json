@@ -1,65 +1,101 @@
 {
-  "editor.fontFamily": "'Fira Code'",
-  "editor.quickSuggestions": {
-    "strings": "on"
-  },
-  "files.autoSave": "afterDelay",
-  "editor.fontSize": 13,
-  "explorer.": 15,
+  "workbench.iconTheme": "material-icon-theme",
+  "javascript.updateImportsOnFileMove.enabled": "always",
   "editor.formatOnSave": true,
-  "eslint.format.enable": true,
-  "terminal.integrated.fontFamily": "MesloLGS NF",
-  "workbench.tree.indent": 16,
-  "editor.fontLigatures": true,
+  "prettier.configPath": ".prettierrc",
+  
+"editor.codeActionsOnSave": {
+  "source.organizeImports": "explicit"
+},
+  "javascript.format.semicolons": "insert",
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "conventionalCommits.autoCommit": false,
+  "conventionalCommits.editor.keepAfterSave": true,
+  "conventionalCommits.showEditor": true,
+  "diffEditor.ignoreTrimWhitespace": false,
+  "diffEditor.wordWrap": "on",
+  "prettier.requireConfig": true,
+  "javascript.format.insertSpaceBeforeFunctionParenthesis": true,
+  "javascript.inlayHints.propertyDeclarationTypes.enabled": true,
+  "prettier.printWidth": 100,
+  "typescript.updateImportsOnFileMove.enabled": "always",
+  "terminal.integrated.env.windows": {},
   "[typescriptreact]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
-  "editor.codeActionsOnSave": {
-    "source.fixAll.eslint": "explicit"
-  },
-  "git.autofetch": true,
-  "[typescript]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  "javascript.updateImportsOnFileMove.enabled": "always",
-  "githubPullRequests.fileListLayout": "flat",
-  "github.copilot.enable": {
-    "*": true,
-    "plaintext": false,
-    "markdown": true,
-    "scminput": false
-  },
-  "githubPullRequests.pullBranch": "never",
-  "terminal.integrated.env.linux": {},
-  "typescript.updateImportsOnFileMove.enabled": "always",
-  "redhat.telemetry.enabled": false,
-  "console-ninja.featureSet": "Community",
-  "files.associations": {
-    "*.css": "tailwindcss"
-  },
-  "tailwind-fold.autoFold": false,
-  "terminal.integrated.defaultProfile.linux": "zsh",
-  "workbench.colorTheme": "Catppuccin Mocha",
-  "workbench.colorCustomizations": {
-    "[Catppuccin Mocha]": {
-      "editorIndentGuide.activeBackground1": "#b4befe"
+  "liveshare.accessibility.soundsEnabled": false,
+  "liveshare.languages.allowGuestCommandControl": true,
+  "liveshare.populateGitCoAuthors": "never",
+  "workbench.colorTheme": "Default Dark+",
+  
+  "prettier.prettierPath": "./node_modules/prettier/index.cjs",
+  "better-comments.tags": [
+
+    {
+      "tag": "!",
+      "color": "#FF2D00",
+      "strikethrough": false,
+      "underline": false,
+      "backgroundColor": "transparent",
+      "bold": false,
+      "italic": false
+    },
+    {
+      "tag": "?",
+      "color": "#3498DB",
+      "strikethrough": false,
+      "underline": false,
+      "backgroundColor": "transparent",
+      "bold": false,
+      "italic": false
+    },
+    {
+      "tag": "//",
+      "color": "#474747",
+      "strikethrough": true,
+      "underline": false,
+      "backgroundColor": "transparent",
+      "bold": false,
+      "italic": false
+    },
+    {
+      "tag": "todo",
+      "color": "#FF8C00",
+      "strikethrough": false,
+      "underline": false,
+      "backgroundColor": "transparent",
+      "bold": false,
+      "italic": false
+    },
+    {
+      "tag": "*",
+      "color": "#98C379",
+      "strikethrough": false,
+      "underline": false,
+      "backgroundColor": "transparent",
+      "bold": false,
+      "italic": false
     }
-  },
+  ],
+  "editor.minimap.enabled": false,
+  "scm.alwaysShowRepositories": true,
+  "scm.alwaysShowActions": true,
+  "console-ninja.featureSet": "Community",
+  "javascript.preferences.quoteStyle": "single",
+  "typescript.preferences.quoteStyle": "single",
+  "html.completion.attributeDefaultValue": "singlequotes",
+  "files.eol": "\n",
+  "html.autoCreateQuotes": false,
+  "html.format.enable": false,
+  "graphite.commandPath": "C:\\Users\\User\\AppData\\Roaming\\npm\\gt.cmd",
+  "files.autoSave": "afterDelay",
+  "gitlens.hovers.currentLine.over": "line",
+  "gitlens.hovers.enabled": false,
+  "prettier.jsxSingleQuote": true,
+  "prettier.singleQuote": true,
+  "eslint.codeActionsOnSave.rules": null,
+  "html.format.wrapLineLength": 100,
+  "eslint.rules.customizations": [],
   "window.zoomLevel": 1,
-  "editor.semanticHighlighting.enabled": true,
-  "terminal.integrated.minimumContrastRatio": 1,
-  "window.titleBarStyle": "custom",
-  "workbench.iconTheme": "catppuccin-mocha",
-  "editor.stickyScroll.enabled": true,
-  "remote.SSH.remotePlatform": {
-    "sandbox.4kcjfh.csb": "linux"
-  },
-  "codesandbox.currentWorkspace": "1a53c741-67c6-47ec-be34-f76e01aa54cd",
-  "git.openRepositoryInParentFolders": "never",
-  "files.exclude": {
-    "**/.git": false
-  },
-  "git.confirmSync": false,
-  "github.copilot.editor.enableAutoCompletions": true,
-  "ansible.validation.lint.enabled": false
+  "terminal.integrated.env.linux": {}
 }
