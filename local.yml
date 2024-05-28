@@ -26,6 +26,7 @@
       apt:
         name: code
         state: latest
+        force: true
     - name: install chrome
       apt:
         name: google-chrome-stable
