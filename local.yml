@@ -47,6 +47,10 @@
       flatpak:
         name: com.slack.Slack
         state: present
+    - name: install spotify
+      flatpak:
+        name: com.spotify.Client
+        state: present
     - name: install osrs
       flatpak:
         name: com.adamcake.Bolt
