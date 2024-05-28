@@ -4,9 +4,9 @@
   tasks:
     - name: pull dotfile repo
       git:
-        repo: https://github.com/FredrikMWold/.dotfiles.git
+        repo: https://github.com/Kodehodekatty/.dotfiles.git
         dest: ~/.dotfiles
-      become_user: fredrik
+      become_user: kathrine-stangeland
     - name: add vscode repository
       apt_repository:
         repo: deb [arch=amd64] https://packages.microsoft.com/repos/vscode stable main
@@ -54,25 +54,25 @@
       stat:
         path: ~/.oh-my-zsh
       register: oh_my_zsh
-      become_user: fredrik
+      become_user: kathrine-stangeland
     - name: install oh-my-zsh
       shell: sh -c "$(wget -O- https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --keep-zshrc
       when: not oh_my_zsh.stat.exists
-      become_user: fredrik
+      become_user: kathrine-stangeland
     - name: remove old .zshrc
       file:
         path: ~/.zshrc
         state: absent
-      become_user: fredrik
+      become_user: kathrine-stangeland
     - name: symlink dotfiles with stow
       shell: cd ~/.dotfiles && stow config
-      become_user: fredrik
+      become_user: kathrine-stangeland
     - name: clear font cache
       shell: fc-cache -f -v
-      become_user: fredrik
+      become_user: kathrine-stangeland
     - name: link dotfile script to bin
       file:
         src: ~/.dotfiles/bin/dotfiles
         dest: ~/bin/dotfiles
         state: link
-      become_user: fredrik
+      become_user: kathrine-stangeland
