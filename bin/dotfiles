@@ -6,7 +6,7 @@ fi
 
 
 if [ -x "$(command -v ansible)" ]; then
-  sudo ansible-pull -U https://github.com/FredrikMWold/.dotfiles.git
+  sudo ansible-pull -U https://github.com/Kodehodekatty/.dotfiles.git
 else
   echo "Ansible is not installed. Please install it first."
 fi
