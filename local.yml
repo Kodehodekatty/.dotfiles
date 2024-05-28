@@ -55,6 +55,10 @@
       flatpak:
         name: com.adamcake.Bolt
         state: present
+    - name: install figma
+      flatpak:
+        name: io.github.Figma_Linux.figma_linux
+        state: present
     - name: check if oh-my-zsh is installed
       stat:
         path: ~/.oh-my-zsh
