@@ -59,6 +59,10 @@
       flatpak:
         name: io.github.Figma_Linux.figma_linux
         state: present
+    - name: install Caprine
+      flatpak:
+        name: com.sindresorhus.Caprine
+        state: present
     - name: check if oh-my-zsh is installed
       stat:
         path: ~/.oh-my-zsh

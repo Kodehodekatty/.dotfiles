@@ -99,5 +99,18 @@
   "html.format.wrapLineLength": 100,
   "eslint.rules.customizations": [],
   "window.zoomLevel": 1,
-  "terminal.integrated.env.linux": {}
+  "terminal.integrated.env.linux": {},
+  "yaml.schemas": {
+    "file:///home/kathrine-stangeland/.vscode/extensions/atlassian.atlascode-3.0.10/resources/schemas/pipelines-schema.json": "bitbucket-pipelines.yml"
+  },
+  "atlascode.jira.jqlList": [
+    {
+      "id": "d232668b-4d6d-4bc7-8cac-fff180c71086",
+      "enabled": true,
+      "name": "My bluemint Issues",
+      "query": "assignee = currentUser() AND resolution = Unresolved ORDER BY lastViewed DESC",
+      "siteId": "3e30ccba-3f9c-4ba6-a5ee-4d999b11e793",
+      "monitor": true
+    }
+  ]
 }
