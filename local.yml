@@ -51,6 +51,10 @@
       flatpak:
         name: com.spotify.Client
         state: present
+    - name: install discord
+      flatpak: 
+        name: com.discordapp.Discord
+        state: present
     - name: install osrs
       flatpak:
         name: com.adamcake.Bolt
